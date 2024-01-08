@@ -75,31 +75,31 @@ const submitTask = async () => {
                             <ul class="list-disc ml-6 mb-6">
                                 <li class="text-lg">Create your first task by clicking the button below.</li>
                             </ul>
-                            <button @click="openModal" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                                Create First Task
-                            </button>
+                        </div>
+                        <button @click="openModal" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                            Create Task
+                        </button>
 
-                            <!-- Modal for creating a task -->
-                            <div v-if="showModal" class="modal">
-                                <div class="modal-content">
-                                    <span @click="closeModal" class="close">&times;</span>
-                                    <h2 class="modal-title">Create a Task</h2>
-                                    <form @submit.prevent="submitTask">
-                                        <div class="form-group">
-                                            <label for="title">Title:</label>
-                                            <input id="title" type="text" v-model="newTask.title" class="form-input" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="description">Description:</label>
-                                            <textarea id="description" v-model="newTask.description" class="form-textarea"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="dueDate">Due Date:</label>
-                                            <input id="dueDate" type="datetime-local" v-model="newTask.dueDate" class="form-input" required>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Create</button>
-                                    </form>
-                                </div>
+                        <!-- Modal for creating a task -->
+                        <div v-if="showModal" class="modal">
+                            <div class="modal-content">
+                                <span @click="closeModal" class="close">&times;</span>
+                                <h2 class="modal-title">Create a Task</h2>
+                                <form @submit.prevent="submitTask">
+                                    <div class="form-group">
+                                        <label for="title">Title:</label>
+                                        <input id="title" type="text" v-model="newTask.title" class="form-input" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description:</label>
+                                        <textarea id="description" v-model="newTask.description" class="form-textarea"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dueDate">Due Date:</label>
+                                        <input id="dueDate" type="datetime-local" v-model="newTask.dueDate" class="form-input" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Create</button>
+                                </form>
                             </div>
                         </div>
                     </div>
