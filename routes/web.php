@@ -41,4 +41,8 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth', 'verified'])->group(function () {
     // Route to display all tasks for the authenticated user
     Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
+
+    // Route to create a task for the authenticated user
+    Route::post('/tasks', [TaskController::class, 'store']);
 });
+
