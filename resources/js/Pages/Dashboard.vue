@@ -37,7 +37,11 @@ const closeModal = () => {
 // Function to handle creating task
 const submitTask = async () => {
     try {
-        const response = await axios.post('/tasks', newTask.value);
+        const response = await axios.post('/tasks', {
+            title: newTask.value.title,
+            description: newTask.value.description,
+            dueDate: newTask.value.dueDate,
+        });
         const createdTask = response.data.task;
         userTasks.value.push(createdTask);
         isNewUser.value = false;
