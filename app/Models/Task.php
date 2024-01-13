@@ -16,6 +16,9 @@ class Task extends Model
         'is_completed',
     ];
 
+    protected $casts = [
+        'due_date' => 'datetime',
+    ];
     // Define the relationship with the User model
     public function user()
     {
