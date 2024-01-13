@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->dateTime('due_date');
             $table->boolean('is_completed')->default(false);
+            $table->boolean('email_sent')->default(false);
         });
     }
 
