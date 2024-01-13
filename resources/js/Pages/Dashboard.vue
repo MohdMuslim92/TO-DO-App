@@ -106,7 +106,9 @@ const formatDueDate = (dueDate: string | null) => {
                                             <!-- Card content for each task -->
                                             <div class="card-content">
                                                 <div class="card-header">
-                                                    <h5 class="text-lg font-semibold">{{ task.title }}</h5>
+                                                    <div class="marquee-wrapper">
+                                                        <h5 class="text-lg font-semibold">{{ task.title }}</h5>
+                                                    </div>
                                                 </div>
                                                 <div class="card-body">
                                                     <p>{{ task.description }}</p>
