@@ -33,7 +33,7 @@ class CheckDueTasks extends Command
         // Fetch tasks due in the next three hours
         $now = now()->format('Y-m-d\TH:i:s.u\Z');
 
-        $dueTasks = Task::whereBetween('due_date', [$now, Carbon::parse($now)->addHours(3)])
+        $dueTasks = Task::whereBetween('due_date', [$now, Carbon::parse($now)->addHours(6)])
             ->where('email_sent', false)
             ->get();
         // Send reminder email for each due task
