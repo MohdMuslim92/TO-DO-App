@@ -123,6 +123,37 @@ label {
     font-size: .9em;
     padding: 12px;
     border-radius: 8px 8px 0 0;
+    /* Set a fixed height for the title section */
+    height: 60px;
+    /* Enable flexbox to vertically center the text */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-header h5 {
+    /* Allow the title to grow vertically within the fixed height */
+    flex-grow: 1;
+    /* Prevent text overflow by truncating it and showing ellipsis */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* Adjust margin and padding for better visual appearance */
+    margin: 0;
+    padding: 0 8px;
+}
+
+/* Additional wrapper for marquee effect */
+.card-header .marquee-wrapper {
+    /* Enable flexbox to ensure proper alignment */
+    display: flex;
+    /* Add marquee behavior on hover */
+    transition: transform 3s linear;
+}
+
+.card-header:hover .marquee-wrapper {
+    /* Apply marquee effect on hover */
+    transform: translateX(-100%);
 }
 
 .card-body {
