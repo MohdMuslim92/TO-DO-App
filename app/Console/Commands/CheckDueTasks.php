@@ -39,11 +39,14 @@ class CheckDueTasks extends Command
         // Send reminder email for each due task
         foreach ($dueTasks as $task) {
             // Dispatch the job to send the reminder email
-            SendTaskDueReminder::dispatch($task);
+            $emailSentSuccessfully = SendTaskDueReminder::dispatch($task);
 
-            // Update the task to mark that the email has been sent
-            $task->update(['email_sent' => true]);
+            // Update the task to mark that the email has been sent only if the email was sent successfully
+            if ($emailSentSuccessfully) {
+                $task->update(['email_sent' => true]);
+            }
         }
+        
         $this->info('Emails queued for sending');
 
     }
